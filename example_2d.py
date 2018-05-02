@@ -80,15 +80,3 @@ for i, y in zip(range(len(slices)), slices):
 
 ax[0].legend(loc='lower left')
 fig.tight_layout()
-    
-
-
-
-
-
-
-
-
-
-
-

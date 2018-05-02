@@ -94,8 +94,8 @@ if plot_simple:
 # Plot derivative observations GP
 Xs_, _, _ = build_XY([X0s.reshape(-1,1),X1s.reshape(-1,1)])
 Ys, Ys_var = m.predict(Xs_, Y_metadata={'output_index':Xs_[:,-1,None].astype(int)})
-Ys_var[:nX0s,:] += m.mixed_noise.Gaussian_noise_0.variance.values
-Ys_var[nX0s:,:] += m.mixed_noise.Gaussian_noise_1.variance.values
+# Ys_var[:nX0s,:] += m.mixed_noise.Gaussian_noise_0.variance.values
+# Ys_var[nX0s:,:] += m.mixed_noise.Gaussian_noise_1.variance.values
 Ys_err = 2*np.sqrt(Ys_var)
 if plot_main:
     ax.plot(X0s.reshape(-1,1),Ys[:nX0s,0],'--',color=col1, label='f(x) (deriv GP)')
